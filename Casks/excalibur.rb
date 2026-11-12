@@ -8,15 +8,14 @@ cask "excalibur" do
   homepage "https://github.com/gaberighter/excalibur"
 
   depends_on arch: :arm64
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "Excalibur.app"
 
   # The app is not notarised, so Gatekeeper would refuse to open it while it
   # carries the quarantine flag that a download is given.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Excalibur.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Excalibur.app"]
   end
 
   zap trash: "~/.config/excalibur"
