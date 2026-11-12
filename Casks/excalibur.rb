@@ -1,6 +1,6 @@
 cask "excalibur" do
-  version "0.1.0"
-  sha256 "37884a527249638eddaf872a97f4849c5ab8e6fc3111983651d60cd26ed24256"
+  version "0.1.1"
+  sha256 "355c314f86fc9979134a5d8c7625054682b5063aadba0f5c28803dd404f52ef2"
 
   url "https://github.com/gaberighter/excalibur/releases/download/v#{version}/Excalibur-#{version}-arm64.zip"
   name "Excalibur"
